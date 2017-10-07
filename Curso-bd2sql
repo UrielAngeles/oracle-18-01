@@ -1,0 +1,6 @@
+--clase de hoy 7 de Octubre
+
+create table almacen(numero_almacen Integer, 
+            ubicacion_almacen varchar2(80),
+            constraint pk_na primary key(numero_almacen)        
+            );    
