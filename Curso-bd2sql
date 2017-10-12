@@ -24,5 +24,31 @@ create or replace procedure guardar_almacen(mi_id IN integer,
           /
           
           SELECT * FROM almacen;
+          
+          create table Vendedor (Numero_Vendedor Integer,
+                                Nombre_Vendedor varchar2(60),
+                                Area_Ventas varchar2(60),
+                      constraint pk_nv primary key(Numero_Vendedor));
+                      
+                      Describe almacen;
+                      Describe vendedor;
+                      
+          create table Cliente(Numero_Cliente Integer,
+                      Numero_Almacen Integer,
+                      Nombre_Cliente Varchar2(60),
+                  Constraint PK_NC Primary Key(Numero_Cliente),
+                  Constraint fk1_Almacen foreign Key (Numero_Almacen)
+                  References Almacen(Numero_Almacen));
+                  
+           create table Ventas(ID_Ventas Integer,
+                        Numero_Cliente Integer,
+                        Numero_Vendedor Integer,
+                        Monto_Venta float(126),
+                  Constraint PK_IDVv1 Primary key(ID_Ventas),
+                  Constraint fk_NC foreign key (Numero_Cliente) references Cliente(Numero_Cliente),
+                  Constraint fk_NV foreign key (Numero_Vendedor) references Vendedor(Numero_Vendedor));
+                  
                         
+                        
+                  
                         
